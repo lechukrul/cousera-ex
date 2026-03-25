@@ -1,0 +1,47 @@
+@UserMenagementApi_HostAddress = http://localhost:5255
+
+### GET all users
+GET {{UserMenagementApi_HostAddress}}/users
+Accept: application/json
+
+###
+
+### GET user by ID
+GET {{UserMenagementApi_HostAddress}}/users/1
+Accept: application/json
+
+###
+
+### POST - Create new user
+POST {{UserMenagementApi_HostAddress}}/users
+Content-Type: application/json
+
+{
+  "userName": "Charlie",
+  "userEmail": "charlie@example.com",
+  "userAge": 25
+}
+
+###
+
+### PUT - Update user
+PUT {{UserMenagementApi_HostAddress}}/users/1
+Content-Type: application/json
+
+{
+  "userName": "Alice Updated",
+  "userEmail": "alice.updated@example.com",
+  "userAge": 31
+}
+
+###
+
+### DELETE - Remove user
+DELETE {{UserMenagementApi_HostAddress}}/users/2
+Accept: application/json
+
+###
+
+GET {{UserMenagementApi_HostAddress}}/secure
+Accept: application/json
+Authorization: Bearer valid-token-1237
